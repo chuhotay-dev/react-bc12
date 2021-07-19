@@ -1,9 +1,9 @@
-import React from 'react'
-
-export default function FunctionalComponent() {
+const FunctionalComponent = () => {
     return (
         <div>
             FunctionalComponent
         </div>
     )
 }
+
+export default FunctionalComponent;
