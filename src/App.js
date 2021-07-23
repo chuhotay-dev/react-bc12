@@ -27,7 +27,9 @@ function App() {
         {/* <DemoDataBinding /> */}
 
         {/* Handling Events */}
-        <DemoHandlingEvents />
+        {/* <DemoHandlingEvents /> */}
+
+        
     </div>
   );
 }

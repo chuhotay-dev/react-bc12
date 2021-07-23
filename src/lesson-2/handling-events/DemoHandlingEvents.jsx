@@ -15,7 +15,10 @@ export default class DemoHandlingEvents extends Component {
     render() {
         return (
             <div>
+                {/* Gọi hàm không tham số */}
                 <button onClick={this.greeting} className="btn btn-info">Click me!</button>
+                
+                {/* Gọi hàm có tham số */}
                 <button onClick={() => this.subcribe('Tay')} className="btn btn-danger">Subscribe</button>
             </div>
         )
