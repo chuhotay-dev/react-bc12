@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Navigation from './Navigation';
 
-class Exsercise2 extends Component {
+class Exercise2 extends Component {
   render() {
     return (
       <div className="container-fluid">
@@ -27,4 +27,4 @@ class Exsercise2 extends Component {
   }
 }
 
-export default Exsercise2;
+export default Exercise2;
