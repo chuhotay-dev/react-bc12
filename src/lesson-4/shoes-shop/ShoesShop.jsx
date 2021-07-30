@@ -5,17 +5,71 @@ import productList from './data.json';
 
 export default class ShoesShop extends Component {
   state = {
-    shoppingList: [
-      {
-        id: 1,
-        name: 'Adidas Prophere',
-        price: 350,
-        quantity: 1,
-        description:
-          'The adidas Primeknit upper wraps the foot with a supportive fit that enhances movement.\r\n\r\n',
-        image: 'http://svcy3.myclass.vn/images/adidas-prophere.png',
-      },
-    ],
+    shoppingList: [],
+  };
+
+  addToShoppingList = shoe => {
+    // Copy ra mảng mới để xử lý
+    const shoppingListUpdate = [...this.state.shoppingList];
+
+    // Bổ sung thuộc tính quantity
+    const newShoe = {
+      ...shoe,
+      quantity: 1,
+    };
+
+    // Kiểm tra sản phẩm đã tồn tại trong mảng hay chưa
+    const idx = shoppingListUpdate.findIndex(item => item.id === shoe.id);
+
+    if (idx === -1) {
+      // Chưa tồn tại trong mảng
+      shoppingListUpdate.push(newShoe);
+    } else {
+      // Đã tồn tại trong mảng
+      shoppingListUpdate[idx].quantity += 1;
+    }
+
+    // Cập nhật lại state
+    this.setState({
+      shoppingList: shoppingListUpdate,
+    });
+  };
+
+  updateQuantity = (id, action) => {
+    // action: true => tăng, false => giảm
+    const shoppingListUpdate = [...this.state.shoppingList];
+
+    // Tìm vị trí phần tử cần cập nhật số lượng
+    const idx = shoppingListUpdate.findIndex(item => item.id === id);
+
+    // Dựa vào action để biết tăng hoặc giảm
+    if (action) {
+      shoppingListUpdate[idx].quantity += 1;
+    } else {
+      if (shoppingListUpdate[idx].quantity > 1) {
+        shoppingListUpdate[idx].quantity -= 1;
+      }
+    }
+
+    // Cập nhật state
+    this.setState({
+      shoppingList: shoppingListUpdate,
+    });
+  };
+
+  removeFromShoppingList = id => {
+    const shoppingListUpdate = [...this.state.shoppingList];
+
+    // Tìm vị trí sản phẩm cần xoá
+    const idx = shoppingListUpdate.findIndex(item => item.id === id);
+
+    // Xoá 1 phần tử tại vị trí idx
+    shoppingListUpdate.splice(idx, 1);
+
+    // Cập nhật state
+    this.setState({
+      shoppingList: shoppingListUpdate,
+    });
   };
 
   render() {
@@ -33,12 +87,19 @@ export default class ShoesShop extends Component {
               data-toggle="modal"
               data-target="#shoppingList"
             >
-              Shopping List
+              Shopping List ({shoppingList.length})
             </button>
           </div>
         </div>
-        <ShoppingList shoppingList={shoppingList} />
-        <ProductList productList={productList} />
+        <ShoppingList
+          shoppingList={shoppingList}
+          updateQuantity={this.updateQuantity}
+          removeFromShoppingList={this.removeFromShoppingList}
+        />
+        <ProductList
+          productList={productList}
+          addToShoppingList={this.addToShoppingList}
+        />
       </div>
     );
   }
