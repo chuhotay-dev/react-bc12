@@ -12,8 +12,9 @@ import './App.css';
 // import DemoState from './lesson-2-3/state/DemoState';
 // import DemoStylingComponent from './lesson-2-3/styling-component/DemoStylingComponent';
 // import ParentComponent from './lesson-4/demo-props/ParentComponent';
-import DemoChildrenProps from './lesson-4/demo-children-props/DemoChildrenProps';
-import ShoesShop from './lesson-4/shoes-shop/ShoesShop';
+// import DemoChildrenProps from './lesson-4/demo-children-props/DemoChildrenProps';
+// import ShoesShop from './lesson-4/shoes-shop/ShoesShop';
+import ShoesShopRedux from './lesson-5-6-7/shoes-shop-redux/ShoesShopRedux';
 
 function App() {
   return (
@@ -59,7 +60,10 @@ function App() {
         {/* <DemoChildrenProps /> */}
 
         {/* Shoes Shop */}
-        <ShoesShop />
+        {/* <ShoesShop /> */}
+
+        {/* Shoes Shop - Redux */}
+        <ShoesShopRedux />
     </div>
   );
 }
