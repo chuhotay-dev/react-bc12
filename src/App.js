@@ -1,4 +1,5 @@
 import './App.css';
+import GameXucXac from './lesson-5-6-7/game-xuc-xac-redux/GameXucXac';
 // import DemoDataBinding from './lesson-1/data-binding/DemoDataBinding';
 // import ClassBasedComponent from './lesson-1/demo-component/ClassBasedComponent';
 // import FunctionalComponent from './lesson-1/demo-component/FunctionalComponent';
@@ -14,7 +15,7 @@ import './App.css';
 // import ParentComponent from './lesson-4/demo-props/ParentComponent';
 // import DemoChildrenProps from './lesson-4/demo-children-props/DemoChildrenProps';
 // import ShoesShop from './lesson-4/shoes-shop/ShoesShop';
-import ShoesShopRedux from './lesson-5-6-7/shoes-shop-redux/ShoesShopRedux';
+// import ShoesShopRedux from './lesson-5-6-7/shoes-shop-redux/ShoesShopRedux';
 
 function App() {
   return (
@@ -63,7 +64,10 @@ function App() {
         {/* <ShoesShop /> */}
 
         {/* Shoes Shop - Redux */}
-        <ShoesShopRedux />
+        {/* <ShoesShopRedux /> */}
+
+        {/* Game Xúc Xắc - Redux */}
+        <GameXucXac />
     </div>
   );
 }
