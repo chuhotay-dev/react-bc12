@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
-export default class ProductItem extends Component {
+import { connect } from 'react-redux';
+import { actAddToShoppingList } from '../../store/actions/shoesShopActions';
+class ProductItem extends Component {
   render() {
     const { shoe, addToShoppingList } = this.props;
 
@@ -23,3 +24,13 @@ export default class ProductItem extends Component {
     );
   }
 }
+
+// Tạo ra các function để dispatch action, các func này sẽ được chuyển thành props component
+const mapDispatchToProps = dispatch => ({
+  addToShoppingList: shoe => {
+    // Dispatch action lên reducer
+    dispatch(actAddToShoppingList(shoe));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(ProductItem);

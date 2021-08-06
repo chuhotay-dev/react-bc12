@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+  actUpdateQuantity,
+  actRemoveFromShoppingList,
+} from '../../store/actions/shoesShopActions';
 
-export default class ShoppingList extends Component {
+class ShoppingList extends Component {
   render() {
     const { shoppingList, updateQuantity, removeFromShoppingList } = this.props;
 
@@ -119,3 +124,21 @@ export default class ShoppingList extends Component {
     );
   }
 }
+
+// Lấy dữ liệu từ store chuyển thành props của component
+const mapStateToProps = state => ({
+  shoppingList: state.shoesShopReducer.shoppingList,
+});
+
+const mapDispatchToProps = dispatch => ({
+  updateQuantity: (id, type) => {
+    dispatch(actUpdateQuantity(id, type));
+  },
+
+  removeFromShoppingList: id => {
+    dispatch(actRemoveFromShoppingList(id));
+  },
+});
+
+// connect (high order function): kết nối react component với redux store
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingList);
