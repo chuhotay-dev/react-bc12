@@ -1,5 +1,7 @@
 import './App.css';
-import GameXucXac from './lesson-5-6-7/game-xuc-xac-redux/GameXucXac';
+import DemoHandleForm from './lesson-8/handle-form/DemoHandleForm';
+// import DemoLifeCycle from './lesson-8/life-cycle/DemoLifeCycle';
+// import GameXucXac from './lesson-5-6-7/game-xuc-xac-redux/GameXucXac';
 // import DemoDataBinding from './lesson-1/data-binding/DemoDataBinding';
 // import ClassBasedComponent from './lesson-1/demo-component/ClassBasedComponent';
 // import FunctionalComponent from './lesson-1/demo-component/FunctionalComponent';
@@ -67,7 +69,13 @@ function App() {
         {/* <ShoesShopRedux /> */}
 
         {/* Game Xúc Xắc - Redux */}
-        <GameXucXac />
+        {/* <GameXucXac /> */}
+
+        {/* Life Cycle */}
+        {/* <DemoLifeCycle /> */}
+
+        {/* Handle Form */}
+        <DemoHandleForm />
     </div>
   );
 }
