@@ -1,5 +1,6 @@
 import './App.css';
-import DemoHandleForm from './lesson-8/handle-form/DemoHandleForm';
+import DemoFormValidation from './lesson-8/handle-form/DemoFormValidation';
+// import DemoHandleForm from './lesson-8/handle-form/DemoHandleForm';
 // import DemoLifeCycle from './lesson-8/life-cycle/DemoLifeCycle';
 // import GameXucXac from './lesson-5-6-7/game-xuc-xac-redux/GameXucXac';
 // import DemoDataBinding from './lesson-1/data-binding/DemoDataBinding';
@@ -75,7 +76,9 @@ function App() {
         {/* <DemoLifeCycle /> */}
 
         {/* Handle Form */}
-        <DemoHandleForm />
+        {/* <DemoHandleForm /> */}
+        <DemoFormValidation />
+
     </div>
   );
 }
